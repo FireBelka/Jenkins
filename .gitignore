@@ -1,0 +1,3 @@
+.terraform*
+creds.txt
+terraform.*
