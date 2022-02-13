@@ -29,5 +29,3 @@ mkdir /home/azureuser/jenkins-backup
 chmod 777 /home/azureuser/jenkins-backup
 az login --service-principal --username ... --password  ... --tenant ...
 az storage blob download-batch --account-name '...' -d '/home/azureuser/jenkins-backup' -s "jenkinsbackup"
-#VAR1=$(az webapp deployment container config --enable-cd true --name 'web-app-from-jenkins' -s staging --resource-group 'web-rg'  | jq '.CI_CD_URL' | tr -d '"')
-#az acr webhook create -n 'jenkinswebappdemo' -r 'testRegK8s' --uri $VAR1 --actions push --scope test-web-page:latest
