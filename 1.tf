@@ -51,7 +51,7 @@ resource "azurerm_app_service" "web-app" {
   app_service_plan_id = azurerm_app_service_plan.app-service-plan-1.id
   site_config {
     always_on        = "true"
-    linux_fx_version = "DOCKER|testregk8s.azurecr.io/web-app:latest"
+    linux_fx_version = "DOCKER|smth.azurecr.io/test-web-page:latest"
   }
   app_settings = local.env_variables_prod
 }
@@ -64,8 +64,7 @@ resource "azurerm_app_service_slot" "web-app-staging" {
   app_service_plan_id = azurerm_app_service_plan.app-service-plan-1.id
   site_config {
     always_on        = "true"
-    linux_fx_version = "DOCKER|testregk8s.azurecr.io/web-app:latest"
-
+    linux_fx_version = "DOCKER|smth.azurecr.io/test-web-page:latest"
   }
 
   app_settings = local.env_variables_staging
